@@ -1,112 +1,212 @@
-import { CheckCircle, Shield, FileText, HeadphonesIcon } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import garageImage from 'figma:asset/19f3477686986145b988f193f211cb2be4bfe127.png';
+<section class="sca-home" style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;">
 
-export function HomePage() {
-  const engagements = [
-    {
-      icon: Shield,
-      title: 'Fiabilité',
-      description: 'Tous nos véhicules sont contrôlés et certifiés avant la vente',
-    },
-    {
-      icon: CheckCircle,
-      title: 'Transparence',
-      description: 'Historique complet et état réel du véhicule communiqué',
-    },
-    {
-      icon: HeadphonesIcon,
-      title: 'Accompagnement',
-      description: 'Un service client à votre écoute tout au long du processus',
-    },
-    {
-      icon: FileText,
-      title: 'Service Carte Grise',
-      description: 'Nous nous occupons de toutes vos démarches administratives',
-    },
-  ];
+  <style>
+    .sca-hero {
+      position: relative;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      color: #ffffff;
+    }
+    .sca-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://saintchamauto.wordpress.com/wp-content/uploads/2025/11/deventure-garage.png');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.7);
+    }
+    .sca-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .sca-hero-title {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    .sca-hero-text {
+      font-size: 1.05rem;
+      margin-bottom: 24px;
+      color: #e5e7eb;
+      max-width: 700px;
+    }
+    .sca-btn-primary {
+      display: inline-block;
+      background: #1d4ed8;
+      color: #ffffff;
+      padding: 12px 26px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+    }
 
-  return (
-    <div className="pt-20">
-      {/* Hero Section */}
-      <section className="relative h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <ImageWithFallback
-            src={garageImage}
-            alt="Saint Cham'Auto - Notre showroom"
-            className="w-full h-full object-cover"
-          />
-        </div>
+    .sca-engagements {
+      background: #f8fafc;
+      padding: 50px 0;
+    }
+    .sca-engagements-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 30px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .sca-card {
+      flex: 1;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+      border: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 260px;
+    }
+    .sca-card img {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      margin-bottom: 16px;
+      transition: transform 0.25s ease;
+    }
+    .sca-card img:hover {
+      transform: scale(1.12);
+    }
+    .sca-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: #0f172a;
+    }
+    .sca-card p {
+      font-size: 0.95rem;
+      color: #475569;
+      margin: 0;
+      padding: 0 8px;
+    }
 
-        {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-          <div className="max-w-2xl">
-            <h1 className="text-5xl md:text-6xl mb-6 text-white">
-              Achetez votre voiture en toute confiance
-            </h1>
-            <p className="text-xl text-slate-300 mb-8">
-              10 ans d'expérience • Véhicules d'occasion et neufs sur commande • Financement • Carte grise express
-            </p>
-            <a
-              href="https://www.leboncoin.fr/boutique/2765101/saint_chamauto.htm"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-lg transition-colors shadow-lg shadow-blue-700/30"
-            >
-              Voir nos annonces
-            </a>
-          </div>
-        </div>
-      </section>
+    .sca-cta {
+      padding: 48px 24px;
+      background: linear-gradient(to bottom right, #1d4ed8, #0f172a);
+      text-align: center;
+      color: #ffffff;
+    }
+    .sca-cta-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .sca-cta h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .sca-cta p {
+      font-size: 1.05rem;
+      margin-bottom: 22px;
+      color: #dbeafe;
+    }
+    .sca-btn-secondary {
+      display: inline-block;
+      background: #ffffff;
+      color: #1d4ed8;
+      padding: 12px 26px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+    }
 
-      {/* Nos Engagements Section */}
-      <section className="py-20 px-6 bg-slate-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl mb-4 text-slate-900">Nos Engagements</h2>
-            <p className="text-xl text-slate-600">
-              Votre satisfaction est notre priorité
-            </p>
-          </div>
+    @media (max-width: 1024px) {
+      .sca-engagements-inner {
+        flex-wrap: wrap;
+      }
+      .sca-card {
+        flex: 1 1 calc(50% - 20px);
+      }
+    }
+    @media (max-width: 640px) {
+      .sca-hero {
+        min-height: 380px;
+      }
+      .sca-engagements-inner {
+        flex-direction: column;
+      }
+      .sca-card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {engagements.map((engagement, index) => (
-              <div
-                key={index}
-                className="bg-white border border-slate-200 rounded-xl p-8 hover:shadow-lg transition-shadow"
-              >
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-700 to-blue-900 rounded-lg flex items-center justify-center mb-6">
-                  <engagement.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
-                </div>
-                <h3 className="text-xl mb-3 text-slate-900">{engagement.title}</h3>
-                <p className="text-slate-600 leading-relaxed">
-                  {engagement.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-br from-blue-700 to-blue-900">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl mb-6 text-white">
-            Prêt à trouver votre prochaine voiture ?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Découvrez notre sélection de véhicules d'occasion de qualité
-          </p>
-          <a
-            href="https://www.leboncoin.fr/boutique/2765101/saint_chamauto.htm"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-white hover:bg-slate-100 text-blue-700 px-8 py-4 rounded-lg transition-colors shadow-lg"
-          >
-            Parcourir nos véhicules
-          </a>
-        </div>
-      </section>
+  <!-- HERO -->
+  <section class="sca-hero">
+    <div class="sca-hero-bg"></div>
+    <div class="sca-hero-inner">
+      <h1 class="sca-hero-title">Achetez votre voiture en toute confiance</h1>
+      <p class="sca-hero-text">
+        Vente de véhicules d’occasion à Saint-Chamond. Véhicules contrôlés et garantis 6 mois, avec possibilité d’extension. Financement et carte grise sur place.
+      </p>
+      <a href="https://www.leboncoin.fr/boutique/2765101/saint_chamauto.htm"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="sca-btn-primary">
+        Voir nos annonces sur LeBonCoin
+      </a>
     </div>
-  );
+  </section>
+
+  <!-- ENGAGEMENTS -->
+  <section class="sca-engagements">
+    <div class="sca-engagements-inner">
+
+      <div class="sca-card">
+        <img src="https://saintchamauto.wordpress.com/wp-content/uploads/2025/11/fiabilite.png" alt="Fiabilité">
+        <h3>Fiabilité</h3>
+        <p>Véhicules contrôlés et certifiés avant la vente.</p>
+      </div>
+
+      <div class="sca-card">
+        <img src="https://saintchamauto.wordpress.com/wp-content/uploads/2025/11/transparence.png" alt="Transparence">
+        <h3>Transparence</h3>
+        <p>Historique complet et état réel communiqué.</p>
+      </div>
+
+      <div class="sca-card">
+        <img src="https://saintchamauto.wordpress.com/wp-content/uploads/2025/11/accompagnement-4.png" alt="Accompagnement">
+        <h3>Accompagnement</h3>
+        <p>Service client à votre écoute.</p>
+      </div>
+
+      <div class="sca-card">
+        <img src="https://saintchamauto.wordpress.com/wp-content/uploads/2025/11/service-carte-grise-1.png" alt="Service Carte Grise">
+        <h3>Service Carte Grise</h3>
+        <p>Nous gérons vos démarches administratives.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA FINALE -->
+  <section class="sca-cta">
+    <div class="sca-cta-inner">
+      <h2>Prêt à trouver votre prochaine voiture ?</h2>
+      <p>Consultez toutes nos annonces et contactez-nous pour une visite.</p>
+      <a href="https://www.leboncoin.fr/boutique/2765101/saint_chamauto.htm"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="sca-btn-secondary">
+        Voir tous nos véhicules sur LeBonCoin
+      </a>
+    </div>
+  </section>
+
+</section>
+
